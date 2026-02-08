@@ -13,6 +13,10 @@ const __dirname = path.dirname(__filename);
 
 const DB_FILE = './database.json';
 
+const http = require('http');
+http.createServer((req, res) => res.end('Bot Online')).listen(8080);
+
+
 function loadDB() {
     if (!fs.existsSync(DB_FILE)) return {};
     const db = JSON.parse(fs.readFileSync(DB_FILE));
